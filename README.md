@@ -1,11 +1,11 @@
-# wordpress101
+# Wordpress101
 This is how it all started
 
 https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
 
 https://ch0yan.wordpress.com/2015/01/04/development-environment-on-elementary-os-ubuntu-part-2-php-installation/
 
-MySQL
+###MySQL
 
     mysql -u root -p
 
@@ -25,7 +25,7 @@ Grant privileges to that new user
 
     exit
 
-Download wordpress
+###Download wordpress
 
     cd ~
     wget http://wordpress.org/latest.tar.gz
@@ -112,3 +112,9 @@ If you want WordPress to automatically update this file with rewrite rules, you 
 if i want ti tighten the security
 
     sudo chmod 644 /var/www/html/.htaccess
+
+###Change the permalink settings in wordpress
+
+    Settings > Permalinks
+    Select want you want
+    Save Changes
