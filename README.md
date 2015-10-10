@@ -15,11 +15,11 @@ Create a new database
 
 Create a new user account
 
-    CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';
+    CREATE USER eckzen@localhost IDENTIFIED BY 'password';
 
 Grant privileges to that new user
 
-    GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost;
+    GRANT ALL PRIVILEGES ON wordpress.* TO eckzen@localhost;
     
     FLUSH PRIVILEGES;
 
@@ -67,7 +67,7 @@ Go to the document Root
 
 Change group ownership
 
-    sudo chown -R demo:www-data *
+    sudo chown -R eckzen:www-data *
 
 Create uploadsdirectory beneath wp-content manually
 
