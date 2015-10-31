@@ -71,7 +71,9 @@ Change group ownership
 
 Create uploadsdirectory beneath wp-content manually
 
-    mkdir /var/www/html/wp-content/uploads
+    sudo chown -R eckzen:www-data * <-- this cause an error. 
+                                        Note: bcoz im stupid. it will work if i start all over 
+    sudo chown -R www-data *        <-- this works
 
     sudo chown -R :www-data /var/www/html/wp-content/uploads
 
@@ -118,3 +120,32 @@ if i want ti tighten the security
     Settings > Permalinks
     Select want you want
     Save Changes
+
+###How to Increase the Maximum File Upload Size in WordPress
+
+http://www.wpbeginner.com/wp-tutorials/how-to-increase-the-maximum-file-upload-size-in-wordpress/
+
+.htcaccess fix
+
+    # BEGIN WordPress
+    <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+    </IfModule>
+    php_value upload_max_filesize 64M
+    php_value post_max_size 64M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+    # END WordPress
+
+###ERROR
+
+    Briefly unavailable for scheduled maintenance. Check back in a minute.
+
+##fix 
+
+    delete .maintenence file in the root
